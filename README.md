@@ -64,3 +64,39 @@ onMounted(() => {
 </template>
 
 ```
+
+### ref ou réactive vont définir le state du composant (équivalent de useState())
+
+```
+import { ref } from 'vue'
+const message = ref('Hello World!') défini le state message
+
+console.log(message.value) // "Hello World!"
+message.value = 'Changed' change le state message équivalent de setState dans react
+```
+
+### Liaison d'attributs v-bind: abbrégée en :
+
+`<div :id="dynamicId"></div> `
+va permettre de lier le state dynamicId a la div (pour changement de classe par ex)
+
+### v-on:click abbrége en @click
+
+écouteur d'évenement (onClick en react)
+
+### v-model fusion de v-bind et v-on
+
+```
+<script setup>
+import { ref } from 'vue'
+
+const text = ref('')
+</script>
+
+<template>
+  <input v-model="text" placeholder="Type here">
+  <p>{{ text }}</p>
+</template>
+```
+
+Permet de modifier le state text à travers l'input
