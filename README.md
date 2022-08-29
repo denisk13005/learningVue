@@ -119,3 +119,25 @@ agit comme un if else directement en attribut de la balise
 
 fait une boucle for sur le tableau todos et rend le text de chaque todo ds la balise li
 exemple todo list : https://vuejs.org/tutorial/#step-7
+
+### computed() (a approfondir !!!)
+
+permet de faire des actions en se servant d'une valeur extérieure ???
+
+### Références du cycle de vie et des modèles
+
+```
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const p = ref(null)
+
+onMounted(() => {
+  p.value.textContent = 'mounted!'
+})
+</script>
+
+<template>
+  <p ref="p">hello</p>
+</template>
+```
