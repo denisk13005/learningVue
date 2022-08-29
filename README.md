@@ -100,3 +100,22 @@ const text = ref('')
 ```
 
 Permet de modifier le state text à travers l'input
+
+### v-if
+
+<h1 v-if="awesome">Vue is awesome!</h1>
+<h1 v-else>Oh no 😢</h1>
+agit comme un if else directement en attribut de la balise
+
+### v-for
+
+```
+<ul>
+  <li v-for="todo in todos" :key="todo.id">
+    {{ todo.text }}
+  </li>
+</ul>
+```
+
+fait une boucle for sur le tableau todos et rend le text de chaque todo ds la balise li
+exemple todo list : https://vuejs.org/tutorial/#step-7
