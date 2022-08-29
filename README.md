@@ -103,8 +103,11 @@ Permet de modifier le state text à travers l'input
 
 ### v-if
 
+```
 <h1 v-if="awesome">Vue is awesome!</h1>
 <h1 v-else>Oh no 😢</h1>
+```
+
 agit comme un if else directement en attribut de la balise
 
 ### v-for
