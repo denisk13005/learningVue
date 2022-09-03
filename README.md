@@ -9,25 +9,25 @@ l'api option => classe
 ```
 <script>
 export default {
-// Properties returned from data() become reactive state
-// and will be exposed on `this`.
+// Les propriétés renvoyées par data() deviennent réactives
+// et sera exposé sur "this"
 data() {
   return {
     count: 0
   }
 },
 
-// Methods are functions that mutate state and trigger updates.
-// They can be bound as event listeners in templates.
+// Les méthodes sont des fonctions qui modifient l'état et déclenchent des mises à jour.
+// Ils peuvent être liés en tant qu'écouteurs d'événements dans les modèles.
 methods: {
   increment() {
     this.count++
   }
 },
 
-// Lifecycle hooks are called at different stages
-// of a component's lifecycle.
-// This function will be called when the component is mounted.
+// Les crochets de cycle de vie sont appelés à différentes étapes
+// du cycle de vie d'un composant.
+// Cette fonction sera appelée lors du montage du composant. equivalent de useEffect()
 mounted() {
   console.log(`The initial count is ${this.count}.`)
 }
