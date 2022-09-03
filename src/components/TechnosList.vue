@@ -2,7 +2,11 @@
   <ul>
     <li v-for="tech in technos" :key="tech.id">
       <span v-if="techToModify !== null && techToModify.id === tech.id">
-        <input type="text" v-model="techToModify.techno" />
+        <input
+          type="text"
+          v-model="techToModify.techno"
+          @keypress.enter="save"
+        />
         <button @click="save(tech)">Save</button>
       </span>
 
@@ -25,7 +29,6 @@ export default {
     },
   },
   setup(props, ctx) {
-    console.log("ctx", ctx.slots);
     const remove = function (tech) {
       console.log(tech);
       const test = props.technos.filter((el) => el.id !== tech.id);
@@ -34,9 +37,9 @@ export default {
     };
     const openModifyTechno = function (tech) {
       techToModify.value = tech;
-      console.log(techToModify.id == tech.id);
     };
     const save = function (tech) {
+      ctx.emit("save", tech);
       techToModify.value = null;
     };
 
@@ -45,7 +48,6 @@ export default {
       openModifyTechno,
       techToModify,
       save,
-      look,
     };
   },
 };

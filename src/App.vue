@@ -20,14 +20,18 @@ export default {
       technos.value = [...technos.value, { techno: data, id: new Date() }];
       console.log(technos.value[0], technos.value);
     };
-    const tech = function (data) {
+    const deleteTech = function (data) {
       console.log("techData", data);
       technos.value = [...technos.value.filter((el) => el.id !== data.id)];
+    };
+    const saveTech = function (data) {
+      console.log("saveTech app", data);
     };
     return {
       saveTechno,
       technos,
-      tech,
+      deleteTech,
+      saveTech,
     };
   },
 };
@@ -41,7 +45,7 @@ export default {
     <!-- @add nous permet de récupérer la valeur compris dans l'enfant grâce au
     context -->
     <TestComponent @add="saveTechno" />
-    <TechnosList :technos="technos" @delete="tech" />
+    <TechnosList :technos="technos" @delete="deleteTech" @save="saveTech" />
   </main>
 </template>
 
